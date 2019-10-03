@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="sample_Book" name="book-edit" extends="_local">
+        <property name="ebook" view="_minimal"/>
+        <property name="author" view="_minimal"/>
+    </view>
+    <view entity="sample_Book" name="book-browse" extends="_local">
+        <property name="author" view="_minimal"/>
+    </view>
+    <view entity="sample_ContractAttachment" name="contractAttachment-edit" extends="_local">
+        <property name="file" view="_local"/>
+    </view>
+    <view entity="sample_Contract" name="contract-edit" extends="_local">
+        <property name="attachments" view="contractAttachment-edit"/>
+    </view>
+</views>

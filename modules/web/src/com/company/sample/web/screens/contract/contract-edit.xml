@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.sample.web.screens.contract">
+    <data>
+        <instance id="contractDc"
+                  class="com.company.sample.entity.Contract"
+                  view="contract-edit">
+            <loader/>
+            <collection id="attachmentsDc" property="attachments"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="contractDc">
+            <column width="250px">
+                <textField id="numberField" property="number"/>
+            </column>
+        </form>
+        <groupBox id="attachmentsBox" caption="msg://com.company.sample.entity/Contract.attachments">
+            <table id="attachmentsTable" dataContainer="attachmentsDc" width="100%" height="200px">
+                <actions>
+                    <action id="create" type="create"/>
+                    <action id="edit" type="edit"/>
+                    <action id="remove" type="remove"/>
+                </actions>
+                <columns>
+                    <column id="file"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="attachmentsTable.create"/>
+                    <button action="attachmentsTable.edit"/>
+                    <button action="attachmentsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

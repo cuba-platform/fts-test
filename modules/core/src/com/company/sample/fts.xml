@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fts-config xmlns="http://schemas.haulmont.com/cuba/fts.xsd">
+    <entities>
+        <entity class="com.company.sample.entity.Book">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.sample.entity.Author">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.sample.entity.ContractAttachment" show="false">
+            <searchables>
+                searchables.add(entity.contract)
+            </searchables>
+        </entity>
+        <entity class="com.company.sample.entity.Contract">
+            <include name="number"/>
+            <include name="attachments.file"/>
+        </entity>
+    </entities>
+</fts-config>
