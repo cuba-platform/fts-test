@@ -4,6 +4,8 @@ The project can be used to test the CUBA [FTS](https://github.com/cuba-platform/
 
 Use the `TestDataGeneratorMBean` in JMX console to generate sample data (see [TestDataGenerator.java](modules/core/src/com/company/sample/jmx/TestDataGenerator.java)).
 
+The MBean allows you to generate a given number of entities with a given number of file attachments.
+
 ## Data Model
 
 Main entities:
