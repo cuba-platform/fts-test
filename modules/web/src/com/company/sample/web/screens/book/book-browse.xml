@@ -23,7 +23,7 @@
                 dataLoader="booksDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="booksTable"
+        <dataGrid id="booksTable"
                     width="100%"
                     dataContainer="booksDc">
             <actions>
@@ -32,9 +32,9 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="title"/>
-                <column id="description"/>
-                <column id="author"/>
+                <column id="title" property="title"/>
+                <column id="description" property="description"/>
+                <column id="author" property="author"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
@@ -43,7 +43,7 @@
                 <button id="editBtn" action="booksTable.edit"/>
                 <button id="removeBtn" action="booksTable.remove"/>
             </buttonsPanel>
-        </groupTable>
+        </dataGrid>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
